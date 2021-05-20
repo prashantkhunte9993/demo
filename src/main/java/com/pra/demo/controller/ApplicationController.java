@@ -21,6 +21,9 @@ public class ApplicationController {
 @RequestMapping(value = "/students" , method = RequestMethod.POST )
     public Student addStudents(@RequestBody Student student){
 
+    // If no @RequestBody added to method signature,
+    // all values will print null, since application cannot convert
+    // request json object to java object on its own
         System.out.println("Student Name :::"+student.getName());
         System.out.println("Student age :::"+student.getAge());
         System.out.println("Student std :::"+student.getStd());
